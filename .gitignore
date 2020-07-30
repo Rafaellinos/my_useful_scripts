@@ -5,7 +5,8 @@ __pycache__/
 
 # C extensions
 *.so
-
+ips.txt
+scanresult.txt
 # Distribution / packaging
 .Python
 build/
