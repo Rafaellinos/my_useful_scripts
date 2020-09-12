@@ -9,7 +9,7 @@ except Exception as err:
 
 
 def encode(arg):
-    return hashlib.sha1(pwd.encode('utf-8')).hexdigest()
+    return hashlib.sha1(arg.encode('utf-8')).hexdigest()
 
 
 print(encode(arg))
