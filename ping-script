@@ -1,0 +1,12 @@
+#!/bin/bash
+# Author: Rafael Veloso
+# Description: Check host state by ping
+
+host="192.168.100.1"
+ping -c1 $host &> /dev/null
+    if [ $? -eq 0 ]
+    then
+    echo $host OK
+    else
+    echo $host NOT OK
+    fi

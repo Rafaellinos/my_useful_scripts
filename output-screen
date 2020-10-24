@@ -1,0 +1,87 @@
+#!/bin/bash
+# Author
+# Date
+#
+a=`hostname -i`
+echo Hello $a
+echo
+echo What is your name?
+read namecont
+echo
+echo Hello $namecont
+echo
+
+echo Type a number
+read count
+if [ $count -eq 100 ]
+then
+  echo Count is 100
+else
+  echo Count is not 100
+fi
+
+# check if file exists
+clear
+if [ -e /home/nerociffer/error.txt ]
+then
+  echo File Exists
+else
+  echo File does not exists
+fi
+
+# If Example
+echo **********************
+echo **********************
+echo "Você gosta mais de batata ou de estudar?"
+read res
+echo
+if [ "$res" == batata ]
+then
+  echo Batatinha quando nasce da um tiro no chao
+elif [ "$res" == estudar ]
+then
+  echo Mto bom gafanhoto
+else
+  echo Resposta invalida
+fi
+
+# for Example
+for i in 1 2 3 4 5
+do
+  echo "Hello Darkness $i"
+done
+
+# While Example
+count=0
+num=10
+while [ $count -lt 10 ]
+do
+  echo $num seconds left to stop this process
+  echo
+  sleep 1
+num=`expr $num - 1`
+count=`expr $count + 1`
+done
+echo
+echo process is stopped!!!
+
+# Case Example
+echo
+echo Please chose one of the options below
+echo
+echo 'a = Display datetime'
+echo 'b = list file and directories'
+echo 'c = list users logged in'
+echo 'd = check system uptime'
+echo
+
+read choice
+
+  case $choice in
+a) date;;
+b) ls;;
+c) who;;
+d) uptime;;
+*) echo invalid choice - Bie.
+  esac
+
